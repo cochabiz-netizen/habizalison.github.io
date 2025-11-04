@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Habiz Alison</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      overflow: hidden;
+    }
+
+    /* ===== Fixed Glass Back Button ===== */
+    .fixed-back-btn {
+      position: fixed;
+      top: 25px;
+      left: 30px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .fixed-back-btn img {
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .fixed-back-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .fixed-back-btn:hover img {
+      transform: translateX(-3px);
+    }
+
+    /* ===== CONTACT CARD ===== */
+    .contact-card {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 340px;
+      transform: translateY(50px);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 25px;
+    }
+
+    /* ===== CONTACT LINKS ===== */
+    .contact-links a,
+    .copy-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      margin: 10px 0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-links a:hover,
+    .copy-btn:hover,
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .contact-links img,
+    .back-btn img {
+      width: 22px;
+      height: 22px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-links a:hover img,
+    .back-btn:hover img {
+      transform: rotate(10deg) scale(1.2);
+    }
+
+    /* ===== TOOLTIP ===== */
+    .tooltip {
+      position: absolute;
+      bottom: -25px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 5px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .tooltip.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== INNER BACK BUTTON ===== */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: 10px 18px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .back-btn img {
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+    }
+
+    @media (max-width: 600px) {
+      .contact-card {
+        width: 90%;
+        padding: 30px;
+      }
+
+      .fixed-back-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Glass Back Button -->
+  <a href="portfolio.html" class="fixed-back-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" alt="Back Icon">
+    Back
+  </a>
+
+  <div class="contact-card">
+    <h2>Contact Me</h2>
+    <p>Let’s connect and create something amazing ✨</p>
+
+    <div class="contact-links">
+      <a href="https://instagram.com/not.habiz" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Icon">
+        @not.habiz
+      </a>
+
+      <div class="copy-btn" onclick="copyEmail()">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Mail Icon">
+        cochabiz@gmail.com
+        <span class="tooltip" id="tooltip">Copied!</span>
+      </div>
+    </div>
+
+  <script>
+    function copyEmail() {
+      const email = "cochabiz@gmail.com";
+      navigator.clipboard.writeText(email);
+      const tooltip = document.getElementById("tooltip");
+      tooltip.classList.add("show");
+      setTimeout(() => tooltip.classList.remove("show"), 1500);
+    }
+  </script>
+
+</body>
+</html>
